@@ -1,0 +1,4 @@
+172.28.126.51
+gdk
+gdk
+cd /orcbackup/gdk/orc_gateway/; /orcbackup/gdk/orc_gateway/stop.sh;cd /orcbackup/gdk/orc_gateway/; echo "Y" | ./start.sh;
