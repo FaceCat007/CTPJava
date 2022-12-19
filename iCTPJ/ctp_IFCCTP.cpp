@@ -393,7 +393,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getAccountData
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetAccountData(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -437,7 +437,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getCommissionRate
 	if(env->GetStringUTFLength(jcode) > 0){
 		JstringToString(code, env, jcode);
 	}
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetCommissionRate(ctpID, code, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -457,7 +457,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getDepthMarketData
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetDepthMarketData(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -477,7 +477,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getInstrumentsData
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[1024 * 1024 * 10];
     int ret = m_funcGetInstrumentsData(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -521,7 +521,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getMarginRate
 	if(env->GetStringUTFLength(jcode) > 0){
 		JstringToString(code, env, jcode);
 	}
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetMarginRate(ctpID, code, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -541,7 +541,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getOrderInfo
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetOrderInfo(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -561,7 +561,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getOrderInfos
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[1024 * 1024 * 10];
 	int ret = m_funcGetOrderInfos(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -581,7 +581,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getPassword
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[1024];
 	int ret = m_funcGetPassword(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -601,7 +601,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getPositionData
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetPositionData(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -621,7 +621,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getPositionDetailData
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetPositionDetailData(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -652,7 +652,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getTradeRecord
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[102400];
 	int ret = m_funcGetTradeRecord(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
@@ -672,7 +672,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getTradeRecords
 		InitFunctionPtr();
 	}
 	int ctpID = (int)jctpID;
-	char *data = new char[1024 * 1024];
+	char *data = new char[1024 * 1024 * 10];
 	int ret = m_funcGetTradeRecords(ctpID, data);
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)

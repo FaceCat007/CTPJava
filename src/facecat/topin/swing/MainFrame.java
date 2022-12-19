@@ -125,32 +125,11 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
                 onSecurityLatestDataCallBack(latestDatas, m_ctpID);
                 continue;
             }
-            str = m_ctp.getInstrumentsData(m_ctpID);
-            if (str.length() > 1)
-            {
-                ArrayList<Security> instrumentDatas = CTPConvert.convertToCTPInstrumentDatas(str);
-                onSecurityCallBack(instrumentDatas, m_ctpID);
-                continue;
-            }
             str = m_ctp.getAccountData(m_ctpID);
             if (str.length() > 1)
             {
                 AccountData accountData = CTPConvert.convertToCTPTradingAccount(str);
                 onAccountDataCallBack(accountData, m_ctpID);
-                continue;
-            }
-            str = m_ctp.getOrderInfos(m_ctpID);
-            if (str.length() > 1)
-            {
-                ArrayList<OrderInfo> orderInfos = CTPConvert.convertToCTPOrderList(str);
-                onOrderInfosCallBack(orderInfos, m_ctpID);
-                continue;
-            }
-            str = m_ctp.getTradeRecords(m_ctpID);
-            if (str.length() > 1)
-            {
-                ArrayList<TradeRecord> tradeRecords = CTPConvert.convertToCTPTradeRecords(str);
-                onTradeRecordsCallBack(tradeRecords, m_ctpID);
                 continue;
             }
             str = m_ctp.getPositionData(m_ctpID);
@@ -201,6 +180,25 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
                 }catch(Exception ex){
                     
                 }
+            }
+            String str = m_ctp.getDepthMarketData(m_ctpID);
+            str = m_ctp.getInstrumentsData(m_ctpID);
+            if (str.length() > 1)
+            {
+                ArrayList<Security> instrumentDatas = CTPConvert.convertToCTPInstrumentDatas(str);
+                onSecurityCallBack(instrumentDatas, m_ctpID);
+            }
+            str = m_ctp.getOrderInfos(m_ctpID);
+            if (str.length() > 1)
+            {
+                ArrayList<OrderInfo> orderInfos = CTPConvert.convertToCTPOrderList(str);
+                onOrderInfosCallBack(orderInfos, m_ctpID);
+            }
+            str = m_ctp.getTradeRecords(m_ctpID);
+            if (str.length() > 1)
+            {
+                ArrayList<TradeRecord> tradeRecords = CTPConvert.convertToCTPTradeRecords(str);
+                onTradeRecordsCallBack(tradeRecords, m_ctpID);
             }
             reqID = m_ctp.generateReqID(m_ctpID);
             m_ctp.subMarketDatas(m_ctpID, reqID, "cu2301,cu2302,cu2303,rb2301,rb2302,rb2304,ru2301,ru2302,ru2303");
