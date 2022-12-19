@@ -30,8 +30,8 @@ public abstract class CTPConvert {
                         int i = 0;
                         cTPDepthMarketData.tradingDay = results[i++];
                         cTPDepthMarketData.code = results[i++];
-                        String exchangeID = results[i++];
-                        String exchangeInstID = results[i++];
+                        cTPDepthMarketData.exchangeID = results[i++];
+                        cTPDepthMarketData.exchangeInstID = results[i++];
                         cTPDepthMarketData.close = FCTran.strToDouble(results[i++]);
                         cTPDepthMarketData.preSettlementPrice = FCTran.strToDouble(results[i++]);
                         cTPDepthMarketData.preClose = FCTran.strToDouble(results[i++]);

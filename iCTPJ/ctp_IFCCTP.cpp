@@ -6,8 +6,21 @@
 #include <iostream>
 #include <string>
 #include <io.h>
-
 using namespace std;
+
+char* G2U(const char* gb2312)
+{
+	int len = MultiByteToWideChar(CP_ACP, 0, gb2312, -1, 0, 0);
+	wchar_t* wstr = new wchar_t[len + 1];
+	memset(wstr, 0, len + 1);
+	MultiByteToWideChar(CP_ACP, 0, gb2312, -1, wstr, len);
+	len = WideCharToMultiByte(CP_UTF8, 0, wstr, -1, 0, 0, 0, 0);
+	char* str = new char[len + 1];
+	memset(str, 0, len + 1);
+	WideCharToMultiByte(CP_UTF8, 0, wstr, -1, str, len, 0, 0);
+	if(wstr) delete[] wstr;
+	return str;
+}
 
 typedef int(*funcAskClose)(int, int, char*, char*, double, int, char, char*);
 typedef int(*funcAskCloseToday)(int, int, char*, char*, double, int, char, char*);
@@ -343,7 +356,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getAccountData
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -362,7 +375,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getBrokerID
 	int ret = m_funcGetBrokerID(ctpID, data);
 	if(ret > 0)
 	{
-		return (env)->NewStringUTF(data);
+		return (env)->NewStringUTF(G2U(data));
 	}
 	else
 	{
@@ -385,7 +398,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getCommissionRate
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -405,7 +418,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getDepthMarketData
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -425,7 +438,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getInstrumentsData
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -444,7 +457,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getInvestorID
 	int ret = m_funcGetInvestorID(ctpID, data);
 	if(ret > 0)
 	{
-		return (env)->NewStringUTF(data);
+		return (env)->NewStringUTF(G2U(data));
 	}
 	else
 	{
@@ -467,7 +480,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getMarginRate
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -487,7 +500,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getOrderInfo
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -507,7 +520,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getOrderInfos
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -527,7 +540,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getPassword
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -547,7 +560,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getPositionData
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -567,7 +580,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getPositionDetailData
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -598,7 +611,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getTradeRecord
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -618,7 +631,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getTradeRecords
 	jstring result = (env)->NewStringUTF("0");
 	if(ret > 0)
 	{
-		result = (env)->NewStringUTF(data);
+		result = (env)->NewStringUTF(G2U(data));
 	}
 	delete[] data;
 	data = 0;
@@ -637,7 +650,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getTradingDate
 	int ret = m_funcGetTradingDate(ctpID, data);
 	if(ret > 0)
 	{
-		return (env)->NewStringUTF(data);
+		return (env)->NewStringUTF(G2U(data));
 	}
 	else
 	{
@@ -657,7 +670,7 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getTradingTime
 	int ret = m_funcGetTradingTime(ctpID, data);
 	if(ret > 0)
 	{
-		return (env)->NewStringUTF(data);
+		return (env)->NewStringUTF(G2U(data));
 	}
 	else
 	{

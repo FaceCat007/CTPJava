@@ -6,13 +6,13 @@ package ctp;
 
 public class AccountData {
 	 // 投资者帐号
-        public String accountID;
+        public String accountID = "";
         // 可用资金
         public double available;
         // 期货结算准备金
         public double balance;
         // 经纪公司代码
-        public String brokerID;
+        public String brokerID = "";
         // 资金差额
         public double cashIn;
         // 平仓盈亏
@@ -22,7 +22,7 @@ public class AccountData {
         // 信用额度
         public double credit;
         // 币种代码
-        public String currencyID;
+        public String currencyID = "";
         // 当前保证金总额
         public double currMargin;
         // 投资者交割保证金
@@ -98,7 +98,7 @@ public class AccountData {
         // 根据持仓盈亏算法计算的特殊产品持仓盈亏
         public double specProductPositionProfitByAlg;
         // 交易日
-        public String tradingDay;
+        public String tradingDay = "";
         // 出金金额
         public double withdraw;
         // 可取资金

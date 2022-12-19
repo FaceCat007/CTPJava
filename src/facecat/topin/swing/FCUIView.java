@@ -58,7 +58,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
         m_host.setNative(m_native);
         m_host.setView(this);
         m_native.setSize(new FCSize(getWidth(), getHeight()));
-        m_native.setAllowScaleSize(true);
+        //m_native.setAllowScaleSize(true);
         
         m_mainFrame = new MainFrame();
         m_mainFrame.setNative(m_native);
@@ -76,7 +76,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
         this.addMouseWheelListener(this);
         this.addComponentListener(this);
         this.addKeyListener(this);
-       m_native.invalidate();
+        m_native.invalidate();
     }
     
     public FCSize m_lastSize = new FCSize();
@@ -235,6 +235,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     */
     public void componentResized(ComponentEvent e){
          m_mainFrame.resetScaleSize(new FCSize(getWidth(), getHeight()));
+         m_native.invalidate();
     }
 
     public void componentMoved(ComponentEvent e){

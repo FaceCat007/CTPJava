@@ -108,7 +108,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
      */
     public void callTimerEvent(String eventName, Object sender, int timerID, Object invoke){
         if(timerID == m_timerID){
-            
+            checkCTPData();
         }
     }
     
@@ -120,62 +120,62 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         while (m_ctp.hasNewDatas(m_ctpID) > 0)
         {
             String str = m_ctp.getDepthMarketData(m_ctpID);
-            if(str.length() > 0){
+            if(str.length() > 1){
                 ArrayList<SecurityLatestData> latestDatas = CTPConvert.convertToCTPDepthMarketData(str);
                 onSecurityLatestDataCallBack(latestDatas, m_ctpID);
                 continue;
             }
             str = m_ctp.getInstrumentsData(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 ArrayList<Security> instrumentDatas = CTPConvert.convertToCTPInstrumentDatas(str);
                 onSecurityCallBack(instrumentDatas, m_ctpID);
                 continue;
             }
             str = m_ctp.getAccountData(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 AccountData accountData = CTPConvert.convertToCTPTradingAccount(str);
                 onAccountDataCallBack(accountData, m_ctpID);
                 continue;
             }
             str = m_ctp.getOrderInfos(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 ArrayList<OrderInfo> orderInfos = CTPConvert.convertToCTPOrderList(str);
                 onOrderInfosCallBack(orderInfos, m_ctpID);
                 continue;
             }
             str = m_ctp.getTradeRecords(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 ArrayList<TradeRecord> tradeRecords = CTPConvert.convertToCTPTradeRecords(str);
                 onTradeRecordsCallBack(tradeRecords, m_ctpID);
                 continue;
             }
             str = m_ctp.getPositionData(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 ArrayList<InvestorPosition> investorPositions = CTPConvert.convertToCTPInvestorPosition(str);
                 onInvestorPositionCallBack(investorPositions, m_ctpID);
                 continue;
             }
             str = m_ctp.getPositionDetailData(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 ArrayList<InvestorPositionDetail> investorPositionDetails = CTPConvert.convertToCTPInvestorPositionDetail(str);
                 onInvestorPositionDetailCallBack(investorPositionDetails, m_ctpID);
                 continue;
             }
             str = m_ctp.getTradeRecord(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 TradeRecord tradeRecord = CTPConvert.convertToCTPTrade(str);
                 onTradeRecordCallBack(tradeRecord, m_ctpID);
                 continue;
             }
             str = m_ctp.getOrderInfo(m_ctpID);
-            if (str.length() > 0)
+            if (str.length() > 1)
             {
                 OrderInfo orderInfo = CTPConvert.convertToCTPOrder(str);
                 onOrderInfoCallBack(orderInfo, m_ctpID);
@@ -218,7 +218,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     */
     public void load(String xml){
         super.load(xml);
-        loginCTP("simnow_client_test", "0000000000000000", "180.168.146.187:10212", "180.168.146.187:10202", "9999", "021739", "123456");
+        
         findView("cbInvestorPosition").addEvent(this, FCEventID.Click, this);
         findView("cbInvestorPositionDetail").addEvent(this, FCEventID.Click, this);
         findView("btnOrder").addEvent(this, FCEventID.Click, this);
@@ -256,6 +256,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         bs.setFieldName(1);
         bs.setFieldText("VOL");
         volDiv.addShape(bs);
+        loginCTP("simnow_client_test", "0000000000000000", "180.168.146.187:10212", "180.168.146.187:10202", "9999", "021739", "123456");
     }
     
     /*
@@ -453,9 +454,6 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
             row.m_cells.get(28).setString("0");
             row.m_cells.get(29).setString("0");
             row.m_cells.get(30).setString("0");
-            row.m_cells.get(31).setString("0");
-            row.m_cells.get(32).setString("0");
-            row.m_cells.get(33).setString("0");
         }
         int rowsSize = gridInvestorPosition.m_rows.size();
         for (int i = 0; i < rowsSize; i++)
@@ -886,37 +884,37 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         row.addCell(0, cell1);
         FCGridStringCell cell2 = new FCGridStringCell();
         cell2.setString(data.code);
-        row.addCell(0, cell2);
+        row.addCell(1, cell2);
         FCGridStringCell cell3 = new FCGridStringCell();
         cell3.setString(data.direction);
-        row.addCell(0, cell3);
+        row.addCell(2, cell3);
         FCGridStringCell cell4 = new FCGridStringCell();
         cell4.setString(data.offsetFlag);
-        row.addCell(0, cell4);
+        row.addCell(3, cell4);
         FCGridStringCell cell5 = new FCGridStringCell();
         cell5.setString(FCTran.getValueByDigit(data.price, 0));
-        row.addCell(0, cell5);
+        row.addCell(4, cell5);
         FCGridStringCell cell6 = new FCGridStringCell();
         cell6.setString(FCTran.getValueByDigit(data.volume, 0));
-        row.addCell(0, cell6);
+        row.addCell(5, cell6);
         FCGridStringCell cell7 = new FCGridStringCell();
         cell7.setString(data.tradeTime);
-        row.addCell(0, cell7);
+        row.addCell(6, cell7);
         FCGridStringCell cell8 = new FCGridStringCell();
         cell8.setString(data.orderSysID);
-        row.addCell(0, cell8);
+        row.addCell(7, cell8);
         FCGridStringCell cell9 = new FCGridStringCell();
         cell9.setString("普通成交");
-        row.addCell(0, cell9);
+        row.addCell(8, cell9);
         FCGridStringCell cell10 = new FCGridStringCell();
         cell10.setString(data.hedgeFlag);
-        row.addCell(0, cell10);
+        row.addCell(9, cell10);
         FCGridStringCell cell11 = new FCGridStringCell();
         cell11.setString(data.exchangeID);
-        row.addCell(0, cell11);
+        row.addCell(10, cell11);
         FCGridStringCell cell12 = new FCGridStringCell();
         cell12.setString(FCTran.doubleToStr(data.commission));
-        row.addCell(0, cell12);
+        row.addCell(11, cell12);
         gridTradeRecord.update();
         gridTradeRecord.invalidate();
     }

@@ -73,31 +73,6 @@
                         <label name="lblAskVolume" text="0" location="250,136" size="57,18" />
                         <label name="lblBidVolume" text="0" location="250,150" size="57,20" />
                         <input type="custom" cid="ribbonbutton2" name="btnTradeMode" text="跟盘" location="3,143" size="46,20" />
-                        <select name="ComboBox" location="180,43" size="100,20" selectedindex="0">
-                          <option text="常用指标" />
-                          <option text="大势型" />
-                          <option text="超买超卖型" />
-                          <option text="趋势型" />
-                          <option text="能量型" />
-                          <option text="成交量型" />
-                          <option text="均线型" />
-                          <option text="图表型" />
-                          <option text="路径型" />
-                          <option text="停损型" />
-                          <option text="其他类型" />
-                        </select>
-                      </div>
-                    </div>
-                    <div type="tabpage" name="pageTradeSetting" text="交易设置" backcolor="none" bordercolor="none">
-                      <div name="divTradeSettings" dock="fill" backcolor="none" bordercolor="none">
-                        <input type="checkbox" name="cbStartFastTrading" text="启用快捷交易" location="171,66" size="115,20" checked="true" />
-                        <input type="custom" cid="ribbonbutton2" name="btnHotKeySetting" font="Default,12" text="快捷交易设置" location="14,59" size="155,30" />
-                        <input type="custom" cid="ribbonbutton2" name="btnAutoCloseSetting" font="Default,12" text="自动止损设置" location="14,96" size="155,30" />
-                        <input type="custom" cid="ribbonbutton2" name="btnAllCloseOrCancelSetting" font="Default,12" text="清仓/全撤设置" location="14,134" size="155,30" />
-                        <input type="custom" cid="ribbonbutton2" name="btnAutoCancelSetting" font="Default,12" text="自动撤单设置" location="14,172" size="155,30" />
-                        <input type="custom" cid="ribbonbutton2" name="btnDefaultVolumeSetting" font="Default,12" text="默认交易手数" location="14,22" size="155,30" />
-                        <input type="checkbox" name="cbStartAutoClose" text="启用自动止损" location="171,103" size="113,20" checked="true" />
-                        <input type="checkbox" name="cbStartAutoCancel" text="启用自动撤单" location="173,172" size="110,21" checked="true" />
                       </div>
                     </div>
                   </div>
@@ -106,59 +81,11 @@
                   <div bordercolor="none" backcolor="none" padding="5,0,0,0">
                     <div type="tab" name="tabOrder2" selectedindex="1" backcolor="-200000000163" bordercolor="-200000000193" dock="fill">
                       <div type="tabpage" name="pageChart" text="图形" bordercolor="none" backcolor="none">
-                        <div type="splitlayout" name="divChart" dock="fill" layoutstyle="toptobottom" size="400,400" splitterposition="0,30,400,30" bordercolor="none" backcolor="none">
-                          <div bordercolor="none" backcolor="none">
-                            <label name="lblKLineCode" text="cu1906" location="10,7" size="56,22" font="Default,14" />
-                            <input type="radio" name="rbday" text="日线" location="427,6" size="68,20" />
-                            <input type="radio" name="rb5m" text="5分钟" location="104,6" size="72,20" checked="True" />
-                            <input type="radio" name="rb15m" text="15分钟" location="181,6" size="74,20" />
-                            <input type="radio" name="rb30m" text="30分钟" location="262,6" size="70,20" />
-                            <input type="radio" name="rb60m" text="60分钟" location="341,6" size="75,20" />
-                          </div>
-                          <chart name="chart" dock="fill" />
-                        </div>
+                        <chart name="chart" dock="fill" />
                       </div>
                     </div>
                   </div>
                   <div type="tab" name="tabOrder" selectedindex="1" backcolor="-200000000163" bordercolor="-200000000193">
-                    <div type="tabpage" name="pageNoTrade" text="未成交单" backcolor="none" bordercolor="none">
-                      <div type="splitlayout" name="divNoTrade" dock="fill" layoutstyle="righttoleft" size="400,400" splitterposition="320,0,320,400" backcolor="none" bordercolor="none">
-                        <div name="divCancelOrder" location="285,0" size="78,338" backcolor="none" bordercolor="none">
-                          <input type="custom" cid="ribbonbutton2" name="btnCancelOrder" checked="true" size="60,60" text="撤单" location="7,12" />
-                          <input type="custom" cid="ribbonbutton2" name="btnCancelAllOrders" location="7,75" size="60,60" text="全撤" />
-                        </div>
-                        <table name="gridNoTrade" location="122,50" size="209,248" backcolor="none" bordercolor="none">
-                          <tr>
-                            <th name="colU11" columntype="no" horizontalalign="far" text="序列号" allowsort="false" width="80" />
-                            <th name="colU1" columntype="text" text="报单编号" width="80" />
-                            <th name="colU2" columntype="text" text="合约" width="80" />
-                            <th name="colU3" columntype="text" horizontalalign="center" text="买卖" width="60" />
-                            <th name="colU4" columntype="text" horizontalalign="center" text="开平" width="60" />
-                            <th name="colU5" columntype="int" horizontalalign="far" text="报单手数" width="80" />
-                            <th name="colU6" columntype="int" horizontalalign="far" text="未成交手数" width="80" />
-                            <th name="colU7" columntype="double" horizontalalign="far" text="报单价格" width="80" />
-                            <th name="colU8" columntype="text" horizontalalign="center" text="报单时间" width="80" />
-                            <th name="colU9" columntype="double" horizontalalign="far" text="冻结保证金" width="80" />
-                            <th name="colU10" columntype="double" horizontalalign="far" text="冻结手续费" width="80" />
-                            <th name="colU12" columntype="text" text="交易所" width="80" />
-                            <th name="colU13" columntype="text" horizontalalign="center" text="投保" width="60" />
-                            <th name="colU14" columntype="int" horizontalalign="far" text="成交手数" width="60" />
-                            <th name="colU15" columntype="text" text="报单价格条件" width="100" />
-                            <th name="colU16" columntype="text" text="有效期类型" width="100" />
-                            <th name="colU17" columntype="text" text="报单类型" width="80" />
-                            <th name="colU18" columntype="text" horizontalalign="center" text="最后成交时间" width="100" />
-                            <th name="colU19" columntype="double" text="成交均价" width="80" />
-                            <th name="colU20" columntype="text" horizontalalign="center" text="是否强平" width="80" />
-                            <th name="colU21" columntype="text" text="强平原因" width="80" />
-                            <th name="colU22" columntype="text" text="指令结果" width="80" />
-                            <th name="colU23" columntype="text" text="挂单状态" width="200" />
-                            <th name="colU24" columntype="text" text="详细状态" width="80" />
-                            <th name="colU25" columntype="text" text="客户端信息" width="100" />
-                            <th name="colU26" columntype="text" text="撤单锁定" width="80" />
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
                     <div type="tabpage" name="pageAllOrders" text="所有委托单" backcolor="none" bordercolor="none">
                       <div type="splitlayout" name="divOrder" dock="fill" layoutstyle="bottomtotop" size="400,400" splitterposition="0,370,400,370" backcolor="none" bordercolor="none">
                         <div name="divDealRecordType" backcolor="none" bordercolor="none">
@@ -171,7 +98,6 @@
                         </div>
                         <table name="gridOrder" dock="Fill" size="569,330" backcolor="none" bordercolor="none">
                           <tr>
-                            <th name="colA17" columntype="no" horizontalalign="far" text="序列号" allowsort="false" width="80" />
                             <th name="colA1" columntype="text" text="报单编号" width="80" />
                             <th name="colA2" columntype="text" text="合约" width="80" />
                             <th name="colA3" columntype="text" horizontalalign="center" text="买卖" width="60" />
@@ -196,36 +122,6 @@
                             <th name="colA23" columntype="text" text="指令结果" width="80" />
                             <th name="colA24" columntype="text" text="客户端信息" width="80" />
                             <th name="colA25" columntype="text" text="撤单锁定" width="60" />
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                    <div type="tabpage" name="pageParkedOrder" text="预埋单条件单" backcolor="none" bordercolor="none">
-                      <div type="splitlayout" name="divParkedOrder" dock="fill" layoutstyle="bottomtotop" size="400,400" splitterposition="0,350,400,350" backcolor="none" bordercolor="none">
-                        <div name="divDealRecordType" location="-1,200" backcolor="none" bordercolor="none">
-                          <input type="radio" name="rdAllCondition" groupname="condition" checked="true" location="0,4" text="全部" size="100,20" />
-                          <input type="radio" name="rdPreCondition" groupname="condition" location="80,4" text="预埋" size="100,20" />
-                          <input type="radio" name="rdCondition" groupname="condition" location="160,4" text="条件" size="100,20" />
-                          <input type="radio" name="rdSend" groupname="condition" location="240,4" text="已发送" size="100,20" />
-                          <input type="custom" cid="ribbonbutton2" name="btnDeleteCondition" location="320,2" size="100,26" text="删除" />
-                          <input type="custom" cid="ribbonbutton2" name="btnSendCondition" location="424,2" size="100,26" text="立即发出" />
-                          <input type="custom" cid="ribbonbutton2" name="btnClearCondition" location="528,2" size="100,26" text="清空已发送" />
-                          <label name="lblConditionTip" textcolor="rgba(255,0,0,255)" location="10,30" size="500,20" text="注意：如果关闭本软件或网络断线，未发出的预埋和本地条件单将失效" />
-                        </div>
-                        <table name="gridParkedOrder" backcolor="none" bordercolor="none">
-                          <tr>
-                            <th name="colI1" columntype="text" text="类型" width="100" />
-                            <th name="colI2" columntype="text" text="状态" width="80" />
-                            <th name="colI3" columntype="text" text="触发条件" width="250" />
-                            <th name="colI4" columntype="text" text="合约" width="60" />
-                            <th name="colI5" columntype="text" horizontalalign="center" text="买卖" width="80" />
-                            <th name="colI6" columntype="text" horizontalalign="center" text="开平" width="80" />
-                            <th name="colI7" columntype="double" horizontalalign="far" text="报单价格" width="80" />
-                            <th name="colI8" columntype="int" horizontalalign="far" text="报单手数" width="80" />
-                            <th name="colI9" columntype="text" horizontalalign="center" text="投保" width="80" />
-                            <th name="colI10" columntype="text" text="交易所" width="60" />
-                            <th name="colI11" columntype="text" horizontalalign="center" text="预埋时间" width="80" />
-                            <th name="colI12" columntype="text" horizontalalign="center" text="预埋单编号" width="120" />
                           </tr>
                         </table>
                       </div>
@@ -385,9 +281,6 @@
                         <th name="colP29" columntype="int" horizontalalign="far" text="今平仓量" width="80" />
                         <th name="colP30" columntype="double" horizontalalign="far" text="现价" width="80" />
                         <th name="colP31" columntype="double" horizontalalign="far" text="最新差价" width="80" />
-                        <th name="colP32" columntype="text" text="对锁" width="100" />
-                        <th name="colP33" columntype="text" text="止盈" width="100" />
-                        <th name="colP34" columntype="text" text="止损" width="100" />
                       </tr>
                     </table>
                     <table name="gridInvestorPositionDetail" dock="fill" visible="false" bordercolor="none" backcolor="none">
