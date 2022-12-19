@@ -208,9 +208,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_askClose
 	char code[100] = {0};
 	char orderRef[100] = {0};
 	char exchangeID[100] = {0};
-	JstringToString(code, env, jcode);
-	JstringToString(orderRef, env, jorderRef);
-	JstringToString(exchangeID, env, jExchangeID);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
+	if(env->GetStringUTFLength(jExchangeID) > 0){
+		JstringToString(exchangeID, env, jExchangeID);
+	}
 	return (jint)m_funcAskClose(ctpID, requestID, code, exchangeID, price, qty, timeCondition, orderRef);
 }
 
@@ -226,9 +232,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_askCloseToday
 	char code[100] = {0};
 	char orderRef[100] = {0};
 	char exchangeID[100] = {0};
-	JstringToString(code, env, jcode);
-	JstringToString(orderRef, env, jorderRef);
-	JstringToString(exchangeID, env, jExchangeID);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
+	if(env->GetStringUTFLength(jExchangeID) > 0){
+		JstringToString(exchangeID, env, jExchangeID);
+	}
 	return (jint)m_funcAskCloseToday(ctpID, requestID, code, exchangeID, price, qty, timeCondition, orderRef);
 }
 
@@ -244,9 +256,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_askOpen
 	char code[100] = {0};
 	char orderRef[100] = {0};
 	char exchangeID[100] = {0};
-	JstringToString(code, env, jcode);
-	JstringToString(orderRef, env, jorderRef);
-	JstringToString(exchangeID, env, jExchangeID);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
+	if(env->GetStringUTFLength(jExchangeID) > 0){
+		JstringToString(exchangeID, env, jExchangeID);
+	}
 	return (jint)m_funcAskOpen(ctpID, requestID, code, exchangeID, price, qty, timeCondition, orderRef);
 }
 
@@ -262,9 +280,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_bidClose
 	char code[100] = {0};
 	char orderRef[100] = {0};
 	char exchangeID[100] = {0};
-	JstringToString(code, env, jcode);
-	JstringToString(orderRef, env, jorderRef);
-	JstringToString(exchangeID, env, jExchangeID);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
+	if(env->GetStringUTFLength(jExchangeID) > 0){
+		JstringToString(exchangeID, env, jExchangeID);
+	}
 	return (jint)m_funcBidClose(ctpID, requestID, code, exchangeID, price, qty, timeCondition, orderRef);
 }
 
@@ -280,9 +304,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_bidCloseToday
 	char code[100] = {0};
 	char orderRef[100] = {0};
 	char exchangeID[100] = {0};
-	JstringToString(code, env, jcode);
-	JstringToString(orderRef, env, jorderRef);
-	JstringToString(exchangeID, env, jExchangeID);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
+	if(env->GetStringUTFLength(jExchangeID) > 0){
+		JstringToString(exchangeID, env, jExchangeID);
+	}
 	return (jint)m_funcBidCloseToday(ctpID, requestID, code, exchangeID, price, qty, timeCondition, orderRef);
 }
 
@@ -298,9 +328,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_bidOpen
 	char code[100] = {0};
 	char orderRef[100] = {0};
 	char exchangeID[100] = {0};
-	JstringToString(code, env, jcode);
-	JstringToString(orderRef, env, jorderRef);
-	JstringToString(exchangeID, env, jExchangeID);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
+	if(env->GetStringUTFLength(jExchangeID) > 0){
+		JstringToString(exchangeID, env, jExchangeID);
+	}
 	return (jint)m_funcBidOpen(ctpID, requestID, code, exchangeID, price, qty, timeCondition, orderRef);
 }
 
@@ -316,9 +352,15 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_cancelOrder
 	char exchangeID[100] = {0};
 	char orderSysID[100] = {0};
 	char orderRef[100] = {0};
-	JstringToString(exchangeID, env, jexchangeID);
-	JstringToString(orderSysID, env, jorderSysID);
-	JstringToString(orderRef, env, jorderRef);
+	if(env->GetStringUTFLength(jexchangeID) > 0){
+		JstringToString(exchangeID, env, jexchangeID);
+	}
+	if(env->GetStringUTFLength(jorderSysID) > 0){
+		JstringToString(orderSysID, env, jorderSysID);
+	}
+	if(env->GetStringUTFLength(jorderRef) > 0){
+		JstringToString(orderRef, env, jorderRef);
+	}
 	return (jint)m_funcCancelOrder(ctpID, requestID, exchangeID, orderSysID, orderRef);
 }
 
@@ -392,7 +434,9 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getCommissionRate
 	}
 	int ctpID = (int)jctpID;
 	char code[100] = {0};
-	JstringToString(code, env, jcode);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
 	char *data = new char[1024 * 1024];
 	int ret = m_funcGetCommissionRate(ctpID, code, data);
 	jstring result = (env)->NewStringUTF("0");
@@ -474,7 +518,9 @@ JNIEXPORT jstring JNICALL Java_ctp_IFCCTP_getMarginRate
 	}
 	int ctpID = (int)jctpID;
 	char code[100] = {0};
-	JstringToString(code, env, jcode);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
 	char *data = new char[1024 * 1024];
 	int ret = m_funcGetMarginRate(ctpID, code, data);
 	jstring result = (env)->NewStringUTF("0");
@@ -764,7 +810,9 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_isTradingTimeExact
 	}
 	int ctpID = (int)jctpID;
 	char code[100] = {0};
-	JstringToString(code, env, jcode);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
 	return (jint)m_funcIsTradingTimeExact(ctpID, code);
 }
 
@@ -777,7 +825,9 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_reqCommissionRate
 	}
 	int ctpID = (int)jctpID;
 	char code[100] = {0};
-	JstringToString(code, env, jcode);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
 	int requestID = (int)jrequestID;
 	return (jint)m_funcReqCommissionRate(ctpID, code, requestID);
 }
@@ -791,7 +841,9 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_reqMarginRate
 	}
 	int ctpID = (int)jctpID;
 	char code[100] = {0};
-	JstringToString(code, env, jcode);
+	if(env->GetStringUTFLength(jcode) > 0){
+		JstringToString(code, env, jcode);
+	}
 	int requestID = (int)jrequestID;
 	return (jint)m_funcReqMarginRate(ctpID, code, requestID);
 }
@@ -817,10 +869,10 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_reqQrySettlementInfo
 	}
 	int ctpID = (int)jctpID;
     int requestID = (int)jrequestID;
-	char code[100] = {0};
-	JstringToString(code, env, jtradingDate);
 	char tradingDate[100] = {0};
-	JstringToString(tradingDate, env, jtradingDate);
+	if(env->GetStringUTFLength(jtradingDate) > 0){
+		JstringToString(tradingDate, env, jtradingDate);
+	}
 	return (jint)m_funcReqQrySettlementInfo(ctpID, requestID, tradingDate);
 }
 
@@ -861,7 +913,9 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_subMarketDatas
 	int ctpID = (int)jctpID;
 	int reqID = (int)jreqID;
 	char stockCode[102400] = {0};
-	JstringToString(stockCode, env, jStockCode);
+	if(env->GetStringUTFLength(jStockCode) > 0){
+		JstringToString(stockCode, env, jStockCode);
+	}
 	return (jint)m_funcSubMarketDatas(jctpID, reqID, stockCode);
 }
 
@@ -875,6 +929,8 @@ JNIEXPORT jint JNICALL Java_ctp_IFCCTP_unSubMarketDatas
 	int ctpID = (int)jctpID;
 	int requestID = (int)jrequestID;
 	char codes[102400] = {0};
-	JstringToString(codes, env, jcodes);
+	if(env->GetStringUTFLength(jcodes) > 0){
+		JstringToString(codes, env, jcodes);
+	}
 	return (jint)m_funcUnSubMarketDatas(ctpID, requestID, codes);
 }

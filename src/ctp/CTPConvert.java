@@ -283,37 +283,35 @@ public abstract class CTPConvert {
 		int len = strs.length;
 		for (int p = 0; p < len; p++) {
 			String[] results = strs[p].split(",");
-			if (results.length >= 43) {
-				InvestorPositionDetail cTPInvestorPositionDetail = new InvestorPositionDetail();
-				int i = 0;
-				cTPInvestorPositionDetail.code = results[i++];
-                                cTPInvestorPositionDetail.brokerID = results[i++];
-                                cTPInvestorPositionDetail.investorID = results[i++];
-                                cTPInvestorPositionDetail.hedgeFlag = results[i++];
-                                cTPInvestorPositionDetail.direction = results[i++];
-                                cTPInvestorPositionDetail.openDate = results[i++];
-                                cTPInvestorPositionDetail.tradeID = results[i++];
-                                cTPInvestorPositionDetail.volume = FCTran.strToInt(results[i++]);
-                                cTPInvestorPositionDetail.openPrice = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.tradingDay = results[i++];
-                                cTPInvestorPositionDetail.settlementID = FCTran.strToInt(results[i++]);
-                                cTPInvestorPositionDetail.tradeType = results[i++];
-                                cTPInvestorPositionDetail.combInstrumentID = results[i++];
-                                cTPInvestorPositionDetail.exchangeID = results[i++];
-                                cTPInvestorPositionDetail.closeProfitByDate = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.closeProfitByTrade = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.positionProfitByDate = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.positionProfitByTrade = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.margin = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.exchMargin = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.marginRateByMoney = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.marginRateByVolume = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.lastSettlementPrice = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.lastSettlementPrice = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.settlementPrice = FCTran.strToDouble(results[i++]);
-                                cTPInvestorPositionDetail.closeVolume = FCTran.strToInt(results[i++]);
-                                list.add(cTPInvestorPositionDetail);
-			}
+			InvestorPositionDetail cTPInvestorPositionDetail = new InvestorPositionDetail();
+                        int i = 0;
+                        cTPInvestorPositionDetail.code = results[i++];
+                        cTPInvestorPositionDetail.brokerID = results[i++];
+                        cTPInvestorPositionDetail.investorID = results[i++];
+                        cTPInvestorPositionDetail.hedgeFlag = results[i++];
+                        cTPInvestorPositionDetail.direction = results[i++];
+                        cTPInvestorPositionDetail.openDate = results[i++];
+                        cTPInvestorPositionDetail.tradeID = results[i++];
+                        cTPInvestorPositionDetail.volume = FCTran.strToInt(results[i++]);
+                        cTPInvestorPositionDetail.openPrice = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.tradingDay = results[i++];
+                        cTPInvestorPositionDetail.settlementID = FCTran.strToInt(results[i++]);
+                        cTPInvestorPositionDetail.tradeType = results[i++];
+                        cTPInvestorPositionDetail.combInstrumentID = results[i++];
+                        cTPInvestorPositionDetail.exchangeID = results[i++];
+                        cTPInvestorPositionDetail.closeProfitByDate = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.closeProfitByTrade = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.positionProfitByDate = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.positionProfitByTrade = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.margin = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.exchMargin = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.marginRateByMoney = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.marginRateByVolume = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.lastSettlementPrice = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.lastSettlementPrice = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.settlementPrice = FCTran.strToDouble(results[i++]);
+                        cTPInvestorPositionDetail.closeVolume = FCTran.strToInt(results[i++]);
+                        list.add(cTPInvestorPositionDetail);
 		}
 		return list;
 	}
