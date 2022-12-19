@@ -338,6 +338,16 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
                         }
                     }
                 }
+            }else if (name.equals("btnCancelOrder2"))
+            {
+                FCGrid gridOrder = getGrid("gridOrder");
+                ArrayList<FCGridRow> selectedRows = gridOrder.getSelectedRows();
+                if (selectedRows.size() > 0)
+                {
+                    String orderSysID = selectedRows.get(0).getCell(0).getString();
+                    String exchangeID = selectedRows.get(0).getCell(16).getString();
+                    m_ctp.cancelOrder(m_ctpID, m_ctp.generateReqID(m_ctpID), exchangeID, orderSysID, "");
+                }
             }
         }
     }
