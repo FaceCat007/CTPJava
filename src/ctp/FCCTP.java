@@ -9,8 +9,6 @@ import java.util.List;
 /**
  * FCCTP 用户接口
  * 
- * @author todd
- *
  */
 public interface FCCTP {
 	/*

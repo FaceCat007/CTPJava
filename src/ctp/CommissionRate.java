@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 手续费
+*/
 public class CommissionRate {
 	//经纪公司代码
         public String brokerID;

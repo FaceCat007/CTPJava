@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 行情数据
+*/
 public class SecurityLatestData {
 	 //触发日
         public String actionDay;

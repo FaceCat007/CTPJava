@@ -10,8 +10,6 @@ import facecat.topin.core.*;
 /**
  * CTP数据转换方法
  * 
- * @author todd
- *
  */
 public abstract class CTPConvert {
 	/**

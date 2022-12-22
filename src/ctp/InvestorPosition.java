@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 持仓数据
+*/
 public class InvestorPosition {
 	//放弃执行冻结
         public int abandonFrozen;

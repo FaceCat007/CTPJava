@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 保证金
+*/
 public class MarginRate {
 	//经纪公司代码
         public String brokerID;

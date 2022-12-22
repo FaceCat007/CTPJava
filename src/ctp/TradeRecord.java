@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 成交回报
+*/
 public class TradeRecord {
 	//经纪公司代码
         public String brokerID;

@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 委托回报
+*/
 public class OrderInfo {
 	//激活时间	
         public String activeTime;

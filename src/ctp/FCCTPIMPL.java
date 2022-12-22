@@ -8,9 +8,7 @@ import java.util.List;
 
 
 /**
- * Lord CTP java 接口
- * 
- * @author todd
+ * CTP java 接口
  *
  */
 public class FCCTPIMPL implements FCCTP {

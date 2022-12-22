@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 资金账号
+*/
 public class AccountData {
 	 // 投资者帐号
         public String accountID = "";

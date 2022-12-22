@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 持仓明细数据
+*/
 public class InvestorPositionDetail {
 	//经纪公司代码
         public String brokerID;

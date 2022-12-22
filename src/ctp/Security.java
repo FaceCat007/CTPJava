@@ -4,6 +4,9 @@
 
 package ctp;
 
+/*
+* 码表数据
+*/
 public class Security {
 	// 组合类型
         public String combinationType;
