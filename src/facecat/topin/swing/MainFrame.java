@@ -379,8 +379,11 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         }
         gridTradeAccount.m_rows.get(0).m_cells.get(0).setString(FCTran.getValueByDigit(data.balance, 0));
         gridTradeAccount.m_rows.get(0).m_cells.get(1).setString(FCTran.getValueByDigit(data.closeProfit, 0));
+        setCellStyle2(gridTradeAccount.m_rows.get(0).m_cells.get(1), data.closeProfit, 0);
         gridTradeAccount.m_rows.get(0).m_cells.get(2).setString(FCTran.getValueByDigit(data.floatProfit, 0));
+        setCellStyle2(gridTradeAccount.m_rows.get(0).m_cells.get(2), data.floatProfit, 0);
         gridTradeAccount.m_rows.get(0).m_cells.get(3).setString(FCTran.getValueByDigit(data.positionProfit, 0));
+        setCellStyle2(gridTradeAccount.m_rows.get(0).m_cells.get(3), data.positionProfit, 0);
         gridTradeAccount.m_rows.get(0).m_cells.get(4).setString(FCTran.getValueByDigit(data.dynamicBalance, 0));
         gridTradeAccount.m_rows.get(0).m_cells.get(5).setString(FCTran.getValueByDigit(data.currMargin, 0));
         gridTradeAccount.m_rows.get(0).m_cells.get(6).setString(FCTran.getValueByDigit(data.frozenCash, 0));
@@ -439,6 +442,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
             row.m_cells.get(5).setString(FCTran.intToStr(data.get(i).getAvailablePosition()));
             row.m_cells.get(6).setString(FCTran.getValueByDigit(data.get(i).positionCost, 0));
             row.m_cells.get(7).setString(FCTran.getValueByDigit(data.get(i).positionProfit, 0));
+            setCellStyle2(row.m_cells.get(7), data.get(i).positionProfit, 0);
             row.m_cells.get(8).setString(FCTran.getValueByDigit(data.get(i).margin, 0));
             row.m_cells.get(9).setString(data.get(i).hedgeFlag);
             if (m_allCodes.containsKey(data.get(i).code))
@@ -464,6 +468,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
             row.m_cells.get(23).setString("0");
             row.m_cells.get(24).setString("0");
             row.m_cells.get(25).setString(FCTran.getValueByDigit(data.get(i).floatProfit, 0));
+            setCellStyle2(row.m_cells.get(25), data.get(i).floatProfit, 0);
             row.m_cells.get(26).setString("0");
             row.m_cells.get(27).setString("0");
             row.m_cells.get(28).setString("0");
