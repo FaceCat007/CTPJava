@@ -565,7 +565,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         {
             return;
         }
-        if (data.orderType.length() == 0)
+        if (data.orderSysID.length() == 0)
         {
             return;
         }
@@ -629,6 +629,10 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         for (int i = 0; i < data.size(); i++)
         {
             if (data.get(i).orderStatus.equals("未知"))
+            {
+                return;
+            }
+            if (data.get(i).orderSysID.length() == 0)
             {
                 return;
             }
@@ -955,6 +959,9 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         gridTradeRecord.setGridLineColor(FCColor.None);
         for (int i = 0; i < data.size(); i++)
         {
+            if(data.get(i).tradeID.length() == 0){
+                return;
+            }
             FCGridRow row = new FCGridRow();
             row.setHeight(30);
             gridTradeRecord.insertRow(0, row);
