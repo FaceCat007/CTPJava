@@ -436,12 +436,19 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
             row.m_cells.get(2).setString(FCTran.intToStr(data.get(i).ydPosition + data.get(i).todayPosition));
             row.m_cells.get(3).setString(FCTran.intToStr(data.get(i).ydPosition));
             row.m_cells.get(4).setString(FCTran.intToStr(data.get(i).todayPosition));
-            row.m_cells.get(5).setString("0");
+            row.m_cells.get(5).setString(FCTran.intToStr(data.get(i).getAvailablePosition()));
             row.m_cells.get(6).setString(FCTran.getValueByDigit(data.get(i).positionCost, 0));
             row.m_cells.get(7).setString(FCTran.getValueByDigit(data.get(i).positionProfit, 0));
             row.m_cells.get(8).setString(FCTran.getValueByDigit(data.get(i).margin, 0));
             row.m_cells.get(9).setString(data.get(i).hedgeFlag);
-            row.m_cells.get(10).setString(data.get(i).code);
+            if (m_allCodes.containsKey(data.get(i).code))
+            {
+                row.m_cells.get(10).setString(m_allCodes.get(data.get(i).code).exchangeID);
+            }
+            else
+            {
+                row.m_cells.get(10).setString("0");
+            }
             row.m_cells.get(11).setString("0");
             row.m_cells.get(12).setString("0");
             row.m_cells.get(13).setString("0");
@@ -456,7 +463,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
             row.m_cells.get(22).setString("0");
             row.m_cells.get(23).setString("0");
             row.m_cells.get(24).setString("0");
-            row.m_cells.get(25).setString("0");
+            row.m_cells.get(25).setString(FCTran.getValueByDigit(data.get(i).floatProfit, 0));
             row.m_cells.get(26).setString("0");
             row.m_cells.get(27).setString("0");
             row.m_cells.get(28).setString("0");

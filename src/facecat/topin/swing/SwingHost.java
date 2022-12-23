@@ -309,10 +309,10 @@ public class SwingHost extends FCHost implements Runnable {
             if (clsid.equals("addbutton")) {
                 FCButton addButton = new FCButton();
                 if ((FCHScrollBar) ((scrollBar instanceof FCHScrollBar) ? scrollBar : null) != null) {
-                    FCSize size = new FCSize(0, 0);
+                    FCSize size = new FCSize(0, 10);
                     addButton.setSize(size);
                 } else {
-                    FCSize size = new FCSize(0, 0);
+                    FCSize size = new FCSize(10, 0);
                     addButton.setSize(size);
                 }
                 return addButton;
@@ -328,10 +328,10 @@ public class SwingHost extends FCHost implements Runnable {
             } else if (clsid.equals("reducebutton")) {
                 FCButton reduceButton = new FCButton();
                 if ((FCHScrollBar) ((scrollBar instanceof FCHScrollBar) ? scrollBar : null) != null) {
-                    FCSize size = new FCSize(0, 0);
+                    FCSize size = new FCSize(0, 10);
                     reduceButton.setSize(size);
                 } else {
-                    FCSize size = new FCSize(0, 0);
+                    FCSize size = new FCSize(10, 0);
                     reduceButton.setSize(size);
                 }
                 return reduceButton;

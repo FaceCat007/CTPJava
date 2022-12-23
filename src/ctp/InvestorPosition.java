@@ -102,13 +102,11 @@ public class InvestorPosition {
         public int ydPosition;
 
 	// 获取可用仓位
-	int getAvailablePosition() {
-		int position = 0;
-		position = position - getFrozenAmount();
-		return position;
+	public int getAvailablePosition() {
+		return position - getFrozenAmount();
 	};
 
-	int getFrozenAmount() {
+	public int getFrozenAmount() {
 		int position = 0;
 		if (posiDirection.equals("多")) {
 			position = longFrozen;
