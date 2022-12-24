@@ -19,8 +19,7 @@ import java.util.*;
 import ctp.*;
 
 /**
- *
- * @author taode
+ * 主界面
  */
 public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerEventCallBack, FCGridCellTouchEventCallBack {
     /*
@@ -45,6 +44,11 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     
     /*
     * 表格点击方法
+    * eventName 事件名称
+    * sender 触发对象
+    * cell 单元格
+    * touchInfo 触摸参数
+    * invoke 引用对象
     */
     public void callGridCellTouchEvent(String eventName, Object sender, FCGridCell cell, FCTouchInfo touchInfo, Object invoke)
     {
@@ -102,9 +106,11 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     
     /**
      * 秒表事件
-     *
+     * 
+     * @param eventName 事件名称
      * @param sender 发送者
      * @param timerID 秒表ID
+     * @param invoke 引用对象
      */
     public void callTimerEvent(String eventName, Object sender, int timerID, Object invoke){
         if(timerID == m_timerID){
@@ -165,6 +171,13 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     
     /*
     * 登陆到CTP
+    * appID 应用ID
+    * authCode 用户ID
+    * mdServer 行情服务器
+    * tdServer 交易服务器
+    * brokerID 机构号
+    * investorID 投资者账号
+    * password 密码
     */
     public void loginCTP(String appID, String authCode, String mdServer, String tdServer, String brokerID, String investorID, String password)
     {
@@ -212,7 +225,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     }
     
     /*
-    * 加载xml
+    * 加载配置
+    * xml 要加载的内容
     */
     public void load(String xml){
         super.load(xml);
@@ -259,6 +273,10 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     
     /*
     * 点击事件
+    * eventName 事件名称
+    * sender 调用对象
+    * touchInfo 触摸信息
+    * invoke 引用对象
     */
     public void callTouchEvent(String eventName, Object sender, FCTouchInfo touchInfo, Object invoke)
     {
@@ -352,6 +370,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     
     /*
     * 资金账户信息回调
+    * data 资金信息
+    * ctpID 交易ID
     */
     public void onAccountDataCallBack(AccountData data, int ctpID)
     {
@@ -407,6 +427,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     
     /*
     * 持仓数据回调
+    * data 持仓数据
+    * ctpID 交易ID
     */
     public void onInvestorPositionCallBack(ArrayList<InvestorPosition> data, int ctpID)
     {
@@ -492,7 +514,9 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     }
 
     /*
-    * 持仓数据回调
+    * 持仓明细数据回调
+    * data 持仓明细数据
+    * ctpID 交易ID
     */
     public void onInvestorPositionDetailCallBack(ArrayList<InvestorPositionDetail> data, int ctpID)
     {
@@ -558,6 +582,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
 
     /*
     * 推送的委托回报回调
+    * data 委托回报
+    * ctpID 交易ID
     */
     public void onOrderInfoCallBack(OrderInfo data, int ctpID)
     {
@@ -621,6 +647,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
 
     /*
     * 主动查询的委托回报回调
+    * data 委托回报集合
+    * ctpID 交易ID
     */
     public void onOrderInfosCallBack(ArrayList<OrderInfo> data, int ctpID)
     {
@@ -686,12 +714,20 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
 
     }
 
+    /*
+    * 所有的代码信息
+    */
     public HashMap<String, Security> m_allCodes = new HashMap<String, Security>();
     
+    /*
+    * 所有的行情信息
+    */
     public HashMap<String, SecurityLatestData> m_allDatas = new HashMap<String, SecurityLatestData>();
 
     /*
     * 码表回调
+    * data 码表集合
+    * ctpID 交易ID
     */
     public void onSecurityCallBack(ArrayList<Security> data, int ctpID)
     {
@@ -762,6 +798,12 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         contractGrid.invalidate();
     }
 
+    /*
+    * 设置单元格的样式
+    * cell 单元格
+    * value1 数值1
+    * value2 数值2
+    */
     public void setCellStyle2(FCGridCell cell, Object value1, Object value2)
     {
         double num1 = 0;
@@ -795,6 +837,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
 
     /*
     * 最新数据回调
+    * data 最新数据集合
+    * ctpID 交易ID
     */
     public void onSecurityLatestDataCallBack(ArrayList<SecurityLatestData> data, int ctpID)
     {
@@ -899,6 +943,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
 
     /*
     * 推送的交易信息回调
+    * data 成交回报
+    * ctpID 交易ID
     */
     public void onTradeRecordCallBack(TradeRecord data, int ctpID)
     {
@@ -952,6 +998,8 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
 
     /*
     * 主动查询的交易信息回调
+    * data 成交回报集合
+    * ctpID 交易ID
     */
     public void onTradeRecordsCallBack(ArrayList<TradeRecord> data, int ctpID)
     {

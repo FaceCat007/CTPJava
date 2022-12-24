@@ -3,22 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/FCCTP.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/MoniAPI.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/InvestorPosition.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/TradeRecord.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/OrderInfo.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/InvestorPositionDetail.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/FCCTPIMPL.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/MarginRate.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/facecat/topin/swing/ArrowButtonM.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/facecat/topin/swing/SwingHost.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/CTPConvert.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/AccountData.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/CommissionRate.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/Security.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/facecat/topin/swing/MainFrame.java</file>
-            <file>file:/C:/Miao/test/facecat_ctpjava/src/ctp/SecurityLatestData.java</file>
+            <file>file://Mac/Home/Desktop/todd/iCTP/facecat_ctpjava/src/ctp/AccountData.java</file>
+            <file>file://Mac/Home/Desktop/todd/iCTP/facecat_ctpjava/src/ctp/CTPConvert.java</file>
         </group>
     </open-files>
 </project-private>

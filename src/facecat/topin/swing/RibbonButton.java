@@ -63,6 +63,8 @@ public class RibbonButton extends FCButton {
 
         /*
 	 * 重绘背景方法
+         * paint 绘图对象
+         * clipRect 裁剪区域
 	 */
 	public void onPaintBackground(FCPaint paint, FCRect clipRect) {
 		FCNative inative = getNative();

@@ -38,15 +38,17 @@ public class UIXmlEx extends FCUIXml
         
         /*
         * 加载Xml
+        * xmlPath Xml的内容
         */
         public void load(String xmlPath){
             super.loadXml(xmlPath, null);
         }
 
-        public double m_scaleFactor = 0.5;
+        public double m_scaleFactor = 1.0;
 
         /*
         * 重置缩放尺寸
+        * clientSize 客户端尺寸
         */
         public void resetScaleSize(FCSize clientSize)
         {

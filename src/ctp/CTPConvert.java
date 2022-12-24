@@ -15,8 +15,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP深度市场数据
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 深度数据集合
 	 */
 	public static ArrayList<SecurityLatestData> convertToCTPDepthMarketData(String result) {
             ArrayList<SecurityLatestData> datas = new ArrayList<SecurityLatestData>();
@@ -79,8 +79,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP合约信息
 	 * 
-	 * @param str
-	 * @return
+	 * @param str 字符串
+	 * @return 合约信息集合
 	 */
 	public static ArrayList<Security> convertToCTPInstrumentDatas(String str) {
 		String[] strs = str.split(";");
@@ -163,8 +163,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP持仓信息
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 持仓信息集合
 	 */
 	public static ArrayList<InvestorPosition> convertToCTPInvestorPosition(String result) {
 		ArrayList<InvestorPosition> list = new ArrayList<InvestorPosition>();
@@ -272,8 +272,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP持仓明细信息
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 持仓明细集合
 	 */
 	public static ArrayList<InvestorPositionDetail> convertToCTPInvestorPositionDetail(String result) {
 		ArrayList<InvestorPositionDetail> list = new ArrayList<InvestorPositionDetail>();
@@ -317,8 +317,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP报单信息
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 报单信息
 	 */
 	public static OrderInfo convertToCTPOrder(String result) {
 		String[] results = result.split(",");
@@ -447,8 +447,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP报单信息
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 报单信息集合
 	 */
 	public static ArrayList<OrderInfo> convertToCTPOrderList(String result) {
 		ArrayList<OrderInfo> lst = new ArrayList<OrderInfo>();
@@ -466,8 +466,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP交易信息
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 交易信息
 	 */
 	public static TradeRecord convertToCTPTrade(String result) {
 		String[] results = result.split(",");
@@ -544,8 +544,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换CTP交易信息列表
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 交易信息集合
 	 */
 	public static ArrayList<TradeRecord> convertToCTPTradeRecords(String result) {
 		ArrayList<TradeRecord> list = new ArrayList<TradeRecord>();
@@ -563,8 +563,8 @@ public abstract class CTPConvert {
 	/**
 	 * 转换成CTP资金账户
 	 * 
-	 * @param result
-	 * @return
+	 * @param result 字符串
+	 * @return 资金账户信息
 	 */
 	public static AccountData convertToCTPTradingAccount(String result) {
 		String[] results = result.split(",");

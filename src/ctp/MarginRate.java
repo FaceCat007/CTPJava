@@ -43,6 +43,5 @@ public class MarginRate {
         public double shortMarginRatioByMoney;
         //空头保证金费
         public double shortMarginRatioByVolume;
-        //
         public String strikePrice;
 }

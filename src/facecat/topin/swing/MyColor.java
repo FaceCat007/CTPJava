@@ -6,10 +6,14 @@ import facecat.topin.core.*;
 * 我的颜色
 */
 public class MyColor {
+    /*
+    * 系统字体
+    */
     public static String m_systemFont = "";
 
     /*
     * 设置系统颜色
+    * value 字体
     */
     public static void setSystemFont(String value)
     {
@@ -1993,6 +1997,7 @@ public class MyColor {
 
     /*
     * 获取我的颜色
+    * color 输入颜色二
     */
     public long getUserColor(long color)
     {

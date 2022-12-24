@@ -58,7 +58,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
         m_host.setNative(m_native);
         m_host.setView(this);
         m_native.setSize(new FCSize(getWidth(), getHeight()));
-        //m_native.setAllowScaleSize(true);
+        m_native.setAllowScaleSize(true);
         
         m_mainFrame = new MainFrame();
         m_mainFrame.setNative(m_native);
@@ -83,6 +83,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     
     /*
     * 绘图方法
+    * graphics 绘图对象
     */
     @Override
     public void paint(Graphics graphics){
@@ -99,6 +100,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     
     /*
     * 鼠标点击
+    * e 鼠标参数
     */
     public void mouseClicked(MouseEvent e){
     }
@@ -107,6 +109,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     
     /*
     * 鼠标按下
+    * e 鼠标参数
     */
     public void mousePressed(MouseEvent e){
         if (m_host.allowOperate())
@@ -128,6 +131,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
 
     /*
     * 鼠标释放
+    * e 鼠标参数
     */
     public void mouseReleased(MouseEvent e){
         if (m_host.allowOperate())
@@ -149,12 +153,14 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
 
     /*
     * 鼠标离开
+    * e 鼠标参数
     */
     public void mouseExited(MouseEvent e){
     }
     
     /*
     * 鼠标进入
+    * e 鼠标参数
     */
     public void mouseEntered(MouseEvent e){
         
@@ -162,6 +168,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     
    /*
     * 鼠标拖拽
+    * e 鼠标参数
     */
     public void mouseDragged(MouseEvent e){
         if (m_host.allowOperate())
@@ -185,6 +192,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
 
     /*
     * 鼠标移动
+    * e 鼠标参数
     */
     public void mouseMoved(MouseEvent e){
         if (m_host.allowOperate())
@@ -208,6 +216,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     
     /*
     * 鼠标滚动
+    * e 鼠标参数
     */
     public void mouseWheelMoved(MouseWheelEvent e){
         if (m_host.allowOperate())
@@ -232,26 +241,40 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
     
     /*
     * 窗体界面改变
+    * e 事件参数
     */
     public void componentResized(ComponentEvent e){
          m_mainFrame.resetScaleSize(new FCSize(getWidth(), getHeight()));
          m_native.invalidate();
     }
 
+    /*
+    * 窗体移动
+    * e 事件参数
+    */
     public void componentMoved(ComponentEvent e){
         
     }
 
+    /*
+    * 窗体显示
+    * e 事件参数
+    */
     public void componentShown(ComponentEvent e){
         
     }
 
+    /*
+    * 窗体隐藏
+    * e 事件参数
+    */
     public void componentHidden(ComponentEvent e){
         
     }
     
     /*
     * 键盘按下
+    * 事件参数
     */
     public void keyTyped(KeyEvent e){
         m_host.m_isAlt = false;
@@ -272,6 +295,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
 
     /*
     * 键盘按住
+    * 事件参数
     */
     public void keyPressed(KeyEvent e){
          m_host.m_isAlt = false;
@@ -291,6 +315,7 @@ public class FCUIView extends JPanel implements MouseListener, MouseMotionListen
 
     /*
     * 键盘释放
+    * 事件参数
     */
     public void keyReleased(KeyEvent e){
         m_native.onKeyUp((char)e.getKeyCode());

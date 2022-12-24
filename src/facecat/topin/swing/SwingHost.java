@@ -291,6 +291,8 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 创建内部视图
+    * parent 父视图
+    * clsid ID
     */
     public final FCView createInternalView(FCView parent, String clsid) {
         FCSplitLayoutDiv splitLayoutDiv = (FCSplitLayoutDiv) ((parent instanceof FCSplitLayoutDiv) ? parent : null);
@@ -411,6 +413,7 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 查找预处理视图
+    * view 视图
     */
     public FCView findPreviewsView(FCView view) {
         if (view.allowPreviewsEvent()) {
@@ -454,6 +457,9 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 获取裁剪区域
+    * lpDestRect 裁剪区域
+    * lpSrc1Rect 区域1
+    * lpSrc2Rect 区域2
     */
     public final int getIntersectRect(RefObject<FCRect> lpDestRect, RefObject<FCRect> lpSrc1Rect, RefObject<FCRect> lpSrc2Rect) {
         lpDestRect.argvalue.left = Math.max(lpSrc1Rect.argvalue.left, lpSrc2Rect.argvalue.left);
@@ -484,6 +490,9 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 获取合并区域
+    * lpDestRect 裁剪区域
+    * lpSrc1Rect 区域1
+    * lpSrc2Rect 区域2
     */
     public final int getUnionRect(RefObject<FCRect> lpDestRect, RefObject<FCRect> lpSrc1Rect, RefObject<FCRect> lpSrc2Rect) {
         return 0;
@@ -491,6 +500,7 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 秒表方法
+    * lpParam 参数
     */
     public final int invokeThread(Object lpParam) {
         if (lpParam instanceof SwingHost) {
@@ -514,6 +524,7 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 局部绘图
+    * rect 区域
     */
     public final void invalidate(FCRect rect) {
         if (m_allowPartialPaint)
@@ -560,6 +571,8 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 跨线程调用
+    * view 视图
+    * args 参数
     */
     public final void invoke(FCView view, Object args) {
         beginInvoke(view, args);
@@ -582,6 +595,7 @@ public class SwingHost extends FCHost implements Runnable {
     
     /*
     * 特殊键是否按下
+    * key 按键
     */
     public boolean isKeyPress(char key){
         //Control
@@ -601,6 +615,7 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 重绘方法
+    * g 绘图对象
     */
     public final void onPaint(Graphics g) {
         FCSize displaySize = m_native.getSize();
@@ -710,6 +725,7 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 设置第二个点
+    * mp 坐标
     */
     public final void setTouchPoint(FCPoint mp) {
         m_mousePoint = mp.clone();
@@ -717,6 +733,8 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 显示提示框
+    * var1 字符串
+    * var2 坐标
     */
     public void showToolTip(String var1, FCPoint var2) {
 
@@ -724,6 +742,8 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 启动秒表
+    * timerID 秒表ID
+    * interval 间隔
     */
     public final void startTimer(int timerID, int interval) {
         interval = interval / 10;
@@ -746,6 +766,7 @@ public class SwingHost extends FCHost implements Runnable {
 
     /*
     * 结束秒表
+    * timerID 秒表ID
     */
     public final void stopTimer(int timerID) {
         synchronized (m_timers) {

@@ -101,11 +101,16 @@ public class InvestorPosition {
         //上日持仓
         public int ydPosition;
 
-	// 获取可用仓位
+	/*
+        * 获取可用仓位
+        */
 	public int getAvailablePosition() {
 		return position - getFrozenAmount();
 	};
 
+        /*
+        * 获取冻结的量
+        */
 	public int getFrozenAmount() {
 		int position = 0;
 		if (posiDirection.equals("多")) {
