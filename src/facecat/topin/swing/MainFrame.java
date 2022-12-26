@@ -579,7 +579,6 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
         gridInvestorPositionDetail.invalidate();
     }
 
-
     /*
     * 推送的委托回报回调
     * data 委托回报
@@ -652,7 +651,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     */
     public void onOrderInfosCallBack(ArrayList<OrderInfo> data, int ctpID)
     {
-         FCGrid gridOrder = getGrid("gridOrder");
+        FCGrid gridOrder = getGrid("gridOrder");
         gridOrder.setGridLineColor(FCColor.None);
         for (int i = 0; i < data.size(); i++)
         {
@@ -744,55 +743,55 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
             row.addCell(0, cell1);
             FCGridStringCell cell2 = new FCGridStringCell();
             cell2.setString(data.get(i).instrumentID);
-            row.addCell(0, cell2);
+            row.addCell(1, cell2);
             FCGridStringCell cell3 = new FCGridStringCell();
             cell3.setString(data.get(i).instrumentName);
-            row.addCell(0, cell3);
+            row.addCell(2, cell3);
             FCGridStringCell cell4 = new FCGridStringCell();
             cell4.setString(data.get(i).exchangeID);
-            row.addCell(0, cell4);
+            row.addCell(3, cell4);
             FCGridStringCell cell5 = new FCGridStringCell();
             cell5.setString(FCTran.doubleToStr(data.get(i).volumeMultiple));
-            row.addCell(0, cell5);
+            row.addCell(4, cell5);
             FCGridStringCell cell6 = new FCGridStringCell();
             cell6.setString(FCTran.doubleToStr(data.get(i).priceTick));
-            row.addCell(0, cell6);
+            row.addCell(5, cell6);
             FCGridStringCell cell7 = new FCGridStringCell();
             cell7.setString("期货");
-            row.addCell(0, cell7);
+            row.addCell(6, cell7);
             FCGridStringCell cell8 = new FCGridStringCell();
             cell8.setString(data.get(i).expireDate);
-            row.addCell(0, cell8);
+            row.addCell(7, cell8);
             FCGridStringCell cell9 = new FCGridStringCell();
             cell9.setString(FCTran.doubleToStr(data.get(i).longMarginRatio));
-            row.addCell(0, cell9);
+            row.addCell(8, cell9);
             FCGridStringCell cell10 = new FCGridStringCell();
             cell10.setString(FCTran.doubleToStr(data.get(i).shortMarginRatio));
-            row.addCell(0, cell10);
+            row.addCell(9, cell10);
             FCGridStringCell cell11 = new FCGridStringCell();
             cell11.setString("0");
-            row.addCell(0, cell11);
+            row.addCell(10, cell11);
             FCGridStringCell cell12 = new FCGridStringCell();
             cell12.setString("0");
-            row.addCell(0, cell12);
+            row.addCell(11, cell12);
             FCGridStringCell cell13 = new FCGridStringCell();
             cell13.setString("0");
-            row.addCell(0, cell13);
+            row.addCell(12, cell13);
             FCGridStringCell cell14 = new FCGridStringCell();
             cell14.setString("0");
-            row.addCell(0, cell14);
+            row.addCell(13, cell14);
             FCGridStringCell cell15 = new FCGridStringCell();
             cell15.setString("0");
-            row.addCell(0, cell15);
+            row.addCell(14, cell15);
             FCGridStringCell cell16 = new FCGridStringCell();
             cell16.setString("0");
-            row.addCell(0, cell16);
+            row.addCell(15, cell16);
             FCGridStringCell cell17 = new FCGridStringCell();
             cell17.setString(FCTran.doubleToStr(data.get(i).maxMarketOrderVolume));
-            row.addCell(0, cell17);
+            row.addCell(16, cell17);
             FCGridStringCell cell18 = new FCGridStringCell();
             cell18.setString(FCTran.doubleToStr(data.get(i).maxLimitOrderVolume));
-            row.addCell(0, cell18);
+            row.addCell(17, cell18);
         }
         contractGrid.invalidate();
         contractGrid.invalidate();
