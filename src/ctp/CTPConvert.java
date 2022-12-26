@@ -673,4 +673,48 @@ public abstract class CTPConvert {
 		}
 		return cTPTradingAccount;
 	}
+        
+        /*
+        * 转换成CTP手续费率
+        * @param result 字符串
+	 * @return CTP手续费率
+        */
+        public static CommissionRate convertToCTPCommissionRate(String result) {
+            String[] results = result.split(",");
+            int i = 0;
+            CommissionRate cTPCommissionRate = new CommissionRate();
+            cTPCommissionRate.code = results[i++];
+            cTPCommissionRate.investorRange = results[i++];
+            cTPCommissionRate.brokerID = results[i++];
+            cTPCommissionRate.investorID = results[i++];
+            cTPCommissionRate.openRatioByMoney = FCTran.strToDouble(results[i++]);
+            cTPCommissionRate.openRatioByVolume = FCTran.strToDouble(results[i++]);
+            cTPCommissionRate.closeRatioByMoney = FCTran.strToDouble(results[i++]);
+            cTPCommissionRate.closeRatioByVolume = FCTran.strToDouble(results[i++]);
+            cTPCommissionRate.closeTodayRatioByMoney = FCTran.strToDouble(results[i++]);
+            cTPCommissionRate.closeTodayRatioByVolume = FCTran.strToDouble(results[i++]);
+            return cTPCommissionRate;
+        }
+        
+        /*
+        * 转换CTP保证金率
+        * @param result 字符串
+	 * @return CTP手续费率
+        */
+        public static MarginRate convertToCTPMarginRate(String result) {
+            String[] results = result.split(",");
+            MarginRate cTPMarginRate = null;
+            int i = 0;
+            cTPMarginRate = new MarginRate();
+            cTPMarginRate.code = results[i++];
+            cTPMarginRate.brokerID = results[i++];
+            cTPMarginRate.investorID = results[i++];
+            cTPMarginRate.hedgeFlag = results[i++];
+            cTPMarginRate.longMarginRatioByMoney = FCTran.strToDouble(results[i++]);
+            cTPMarginRate.longMarginRatioByVolume = FCTran.strToDouble(results[i++]);
+            cTPMarginRate.shortMarginRatioByMoney = FCTran.strToDouble(results[i++]);
+            cTPMarginRate.shortMarginRatioByVolume = FCTran.strToDouble(results[i++]);
+            cTPMarginRate.isRelativel = FCTran.strToInt(results[i++]);
+            return cTPMarginRate;
+        }
 }
