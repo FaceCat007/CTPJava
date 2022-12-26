@@ -200,6 +200,8 @@ public class SwingPaint extends FCPaint{
         m_resourcePath = null;
         m_wRect = wRect.clone();
         m_pRect = pRect.clone();
+        m_g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        m_g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     }
 
     /**
