@@ -166,6 +166,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
                 onOrderInfoCallBack(orderInfo, m_ctpID);
                 continue;
             }
+            break;
         }
     }
     
