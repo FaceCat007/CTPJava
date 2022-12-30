@@ -652,6 +652,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     public void onOrderInfosCallBack(ArrayList<OrderInfo> data, int ctpID)
     {
         FCGrid gridOrder = getGrid("gridOrder");
+        gridOrder.clearRows();
         gridOrder.setGridLineColor(FCColor.None);
         for (int i = 0; i < data.size(); i++)
         {
@@ -731,6 +732,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     public void onSecurityCallBack(ArrayList<Security> data, int ctpID)
     {
         FCGrid contractGrid = getGrid("gridContracts");
+        contractGrid.clearRows();
         contractGrid.setGridLineColor(FCColor.None);
         for (int i = 0; i < data.size(); i++)
         {
@@ -1003,6 +1005,7 @@ public class MainFrame extends UIXmlEx implements FCTouchEventCallBack, FCTimerE
     public void onTradeRecordsCallBack(ArrayList<TradeRecord> data, int ctpID)
     {
         FCGrid gridTradeRecord = getGrid("gridTradeRecord");
+        gridTradeRecord.clearRows();
         gridTradeRecord.setGridLineColor(FCColor.None);
         for (int i = 0; i < data.size(); i++)
         {
